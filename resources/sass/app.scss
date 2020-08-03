@@ -1,1 +1,15 @@
-//
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+.nav-color {
+    background-color: $onyx;
+}
+
+$theme-colors: (
+    "primary": #ffa630
+);
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";

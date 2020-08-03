@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', ['title' => 'Welcome to the blog']);
+});
+
+Route::get('/a/{id}', function ($id) {
+    return 'This is for articles and here is the id: ' . $id;
+});
+
+Route::get('/about', function () {
+    return 'This is the About page';
+});
+
+Route::get('/contributors', function () {
+    return 'This is the contributors page';
+});
+
+Route::get('/contact', function () {
+    return 'This is the contact page';
 });
