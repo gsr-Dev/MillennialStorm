@@ -10,6 +10,8 @@ class ArticlesController extends Controller
 {
     public function index()
     {
+        $articles = Articles::all();
+        return view('blog.index', ['articles' => $articles]);
     }
 
     public function show($id)

@@ -19,16 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/', function () {
-    return view('index', [
-        'text' => 'This is a test decription of a certian size',
-        'title' => 'This is a random title'
-    ]);
-});
+Route::get('/', 'ArticlesController@index');
 
-Route::get('/a/{id}', 'ArticlesController@show');
+//Route::get('/a/{id}', 'ArticlesController@show');
 
-Route::get('/a/all', 'ArticlesController@index');
+//Route::get('/a/all', 'ArticlesController@index');
 
 Route::get('/about', function () {
     return view('about');
