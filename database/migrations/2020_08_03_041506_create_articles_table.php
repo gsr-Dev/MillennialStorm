@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string("title");
-            $table->string("description")->nullable();
+            $table->string("description");
             $table->string("markdown");
             $table->string("author");
             $table->uuid("uuid");

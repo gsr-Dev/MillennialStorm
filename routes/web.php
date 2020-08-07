@@ -19,20 +19,16 @@ Auth::routes();
 
 Route::get('/creator/login', 'HomeController@index')->name('home');
 
-Route::get('/', 'ArticlesController@index');
+// .com URL hit
+Route::get('/', 'ArticleController@index');
 
-//Route::get('/a/{id}', 'ArticlesController@show');
+// resource routes 
+// Route::get('/a', 'ArticleController@index');
+// Route::get('/a/create', 'ArticleController@create');
+// Route::post('/a', 'ArticleController@store');
+// Route::get('/a/{id}', 'ArticleController@show');
+// Route::get('/a/{id}/edit', 'ArticleController@edit');
+// Route::put('/a/{id}', 'ArticleController@update');
+// Route::delete('/a{id}', 'ArticleController@destroy');
 
-//Route::get('/a/all', 'ArticlesController@index');
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contributors', function () {
-    return 'This is the contributors page';
-});
-
-Route::get('/contact', function () {
-    return 'This is the contact page';
-});
+Route::resource('a', 'ArticleController');
