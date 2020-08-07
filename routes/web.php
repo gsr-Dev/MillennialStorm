@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +20,18 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
-    return view('index', ['title' => 'Welcome to the blog']);
+    return view('index', [
+        'text' => 'This is a test decription of a certian size',
+        'title' => 'This is a random title'
+    ]);
 });
 
-Route::get('/a/{id}', function ($id) {
-    return 'This is for articles and here is the id: ' . $id;
-});
+Route::get('/a/{id}', 'ArticlesController@show');
+
+Route::get('/a/all', 'ArticlesController@index');
 
 Route::get('/about', function () {
-    return 'This is the About page';
+    return view('about');
 });
 
 Route::get('/contributors', function () {
