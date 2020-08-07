@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/creator/login', 'HomeController@index')->name('home');
 
 Route::get('/', 'ArticlesController@index');
 

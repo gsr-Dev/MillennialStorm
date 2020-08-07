@@ -4,14 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         @foreach($articles as $article)
-        <div class="card border-primary bg-dark">
-            <div class="card-body text-primary">
-                <h3 class="card-title">{{$article->title}}</h3>
-                <p class="text-muted">{{$article->author}}</p>
-                <p class="text-light">{{$article->markdown}}</p>
+        <div class="container pb-2">
+            <div class="card border-primary bg-dark">
+                <div class="card-body text-primary">
+                    <h3 class="card-title">{{$article->title}}</h3>
+                    <p class="text-muted">{{$article->author}}</p>
+                    <p class="text-light">{{$article->markdown}}</p>
 
+                </div>
             </div>
         </div>
+
         @endforeach
     </div>
 </div>
