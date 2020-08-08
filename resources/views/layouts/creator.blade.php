@@ -42,14 +42,9 @@
         </nav>
 
         <div class="container">
-            <div class="row">
-
-                <main class="py-4">
-                    @yield('main')
-                </main>
-
-
-            </div>
+            <main class="py-4">
+                @yield('main')
+            </main>
         </div>
 
         <footer class="fixed-bottom">
