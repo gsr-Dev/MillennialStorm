@@ -18,4 +18,11 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testRoutes()
+    {
+        $response = $this->get('/a/create');
+
+        $response->assertStatus(200);
+    }
 }

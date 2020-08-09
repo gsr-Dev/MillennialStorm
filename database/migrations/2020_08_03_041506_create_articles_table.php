@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->string("description");
             $table->string("markdown");
             $table->string("author");
-            $table->uuid("uuid");
+            $table->string("image_file");
         });
     }
 

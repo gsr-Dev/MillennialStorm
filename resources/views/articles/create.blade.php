@@ -14,6 +14,10 @@
         <label for="post" class="text-light">Post</label>
         <textarea class="form-control" name="post" id="form-description" cols="30" rows="10"></textarea>
     </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Example file input</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/jpeg, image/gif">
+    </div>
     <button type="submit" class="btn btn-primary">Post</button>
     <button type="button" class="btn btn-light" data-toggle="modal" data-target="#markdownSyntax">Markdown Syntax</button>
 </form>
