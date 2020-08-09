@@ -20,8 +20,9 @@ class CreateArticlesTable extends Migration
             $table->string("title");
             $table->string("description");
             $table->string("markdown");
-            $table->string("author");
-            $table->string("image_file");
+            $table->string("first-name");
+            $table->string("last-name");
+            $table->string("alias");
         });
     }
 
