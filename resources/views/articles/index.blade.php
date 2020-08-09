@@ -11,7 +11,7 @@
                     <h6 class="text-muted text-uppercase">Politics</h6>
                     <h3 class="card-title text-primary">Place holder text</h3>
                     <p class="text-light">By Greg Rabone</p>
-                    <p class="text-light">Place holder text</p>
+                    <p class="text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quibusdam amet voluptatibus illo soluta ullam autem obcaecati ipsam inventore voluptatem.</p>
                 </div>
                 <div class="card-footer">
                     <p class="text-muted">{{date("Y/m/d")}}</p>
