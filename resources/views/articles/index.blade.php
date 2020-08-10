@@ -3,21 +3,21 @@
 @section('main')
 <div class="container">
     <div class="row justify-content-center">
-
-        <div class="container pb-2">
+        @foreach($articleProps as $articleProp)
+        <div class="container w-50 pb-2">
             <div class="card rounded-0 border-0 bg-dark">
-                <img src="/img/temp-picture.jpg" class="card-img-top" alt="article picture">
+                <img src="/storage/cover_images/{{$articleProp->cover_image}}" class="card-img-top" alt="article picture">
                 <div class="card-body">
-                    @foreach($articleProps as $articleProp)
+
                     <h6 class="text-muted text-uppercase">Politics</h6>
                     <h3 class="card-title text-primary">{{$articleProp->title}}</h3>
-                    <p class="text-light">By {{$articleProp->firstName}} {{$articleProp->lastName}}</p>
+                    <p class=" text-light">By {{$articleProp->first_name}} {{$articleProp->last_name}}</p>
                     <div class="text-light">
 
                         {!! $articleProp->post !!}
 
                     </div>
-                    @endforeach
+
                 </div>
                 <div class="card-footer">
                     <p class="text-muted">{{date("Y/m/d")}}</p>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-
+        @endforeach
 
     </div>
 </div>

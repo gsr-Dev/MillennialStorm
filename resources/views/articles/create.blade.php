@@ -1,7 +1,7 @@
 @extends('layouts.creator')
 
 @section('main')
-<form action="/a" method="POST">
+<form action="/a" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="title" class="text-light">Title</label>
@@ -21,15 +21,15 @@
     </div>
     <div class="form-group">
 
-        <label for="markdown" class="text-light">Post</label>
+        <label for="post" class="text-light">Post</label>
         <textarea class="ckeditor form-control" name="post" id="form-post"></textarea>
 
 
     </div>
-    <!-- <div class="form-group">
-        <label for="exampleFormControlFile1">Example file input</label>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1" accept="image/jpeg, image/gif">
-    </div> -->
+    <div class="form-group">
+        <label for="cover_image">Example file input</label>
+        <input type="file" class="form-control-file" name="cover_image">
+    </div>
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
 <script src="/ckeditor/ckeditor.js"></script>

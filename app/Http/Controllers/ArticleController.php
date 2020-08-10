@@ -18,8 +18,10 @@ class ArticleController extends Controller
     {
         $articleProps = Article::latest()->get();
 
+
         return view('articles.index', [
             'articleProps' => $articleProps,
+
         ]);
     }
 
@@ -41,17 +43,41 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
+
+        if ($request->hasFile('cover_image')) {
+            // fullname
+            $fileNameWithExtension = $request->file('cover_image')->getClientOriginalName();
+            // just file name 
+            $name = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
+            // extenstion
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            //store name 
+            $fileNameToStore = $name . '_' . time() . '.' . $extension;
+
+
+
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+        } else {
+            $fileNameToStore = "noimage.jpg";
+        }
+
+        // text
         $article = new Article();
         $article->title = $request->title;
         $article->description = $request->description;
         $article->post = request('post');
-        $article->firstName = $request->firstName;
-        $article->lastName = $request->lastName;
+        $article->first_name = $request->firstName;
+        $article->last_name = $request->lastName;
+        $article->cover_image = $fileNameToStore;
 
         $article->save();
 
         return redirect('/');
     }
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -61,7 +87,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return response()->json([$article]);
     }
 
     /**

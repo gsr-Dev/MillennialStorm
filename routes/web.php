@@ -32,3 +32,6 @@ Route::get('/', 'ArticleController@index');
 // Route::delete('/a{id}', 'ArticleController@destroy');
 
 Route::resource('a', 'ArticleController');
+
+// ckeditor image upload
+Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');
