@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use Illuminate\Http\Request;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use League\CommonMark\CommonMarkConverter;
 
 class ArticleController extends Controller
 {
@@ -13,7 +16,11 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('articles.index');
+        $articleProps = Article::latest()->get();
+
+        return view('articles.index', [
+            'articleProps' => $articleProps,
+        ]);
     }
 
     /**
@@ -34,7 +41,16 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $article = new Article();
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->post = request('post');
+        $article->firstName = $request->firstName;
+        $article->lastName = $request->lastName;
+
+        $article->save();
+
+        return redirect('/');
     }
 
     /**

@@ -19,10 +19,9 @@ class CreateArticlesTable extends Migration
             $table->timestamps();
             $table->string("title");
             $table->string("description");
-            $table->string("markdown");
-            $table->string("first-name");
-            $table->string("last-name");
-            $table->string("alias");
+            $table->longText("post");
+            $table->string("firstName");
+            $table->string("lastName");
         });
     }
 
