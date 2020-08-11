@@ -38,13 +38,19 @@
                     <div class="row d-flex">
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="/about">About</a>
+                                <a class="nav-link active text-uppercase" href="{{route('category.politics')}}">Politics</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="/contributors">Contributors</a>
+                                <a class="nav-link active text-uppercase" href="{{route('category.reviews')}}">Reviews</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="#">item</a>
+                                <a class="nav-link active text-uppercase" href="{{route('category.motivation')}}">Motivation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-uppercase" href="{{route('category.clap-back')}}">Clap-back</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active text-uppercase" href="{{route('category.in-my-backyard')}}">In my backyard</a>
                             </li>
                         </ul>
                     </div>
@@ -66,8 +72,13 @@
             </div>
         </div>
 
-        <footer class="fixed-bottom">
-            Copyright 2020 Greg
+        <footer>
+            <div class="container-fluid bg-primary">
+                <div class="d-flex flex-row justify-content-center">
+                    <div>Flex item 1</div>
+                    <div>Flex item 2</div>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

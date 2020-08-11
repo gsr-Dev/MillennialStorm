@@ -24,11 +24,10 @@
         <input list="tags" name="tag">
         <datalist id="tags">
             <option>Politics</option>
-            <option>Review</option>
-            <option>Wisdom</option>
+            <option>Reviews</option>
             <option>Motivation</option>
-            <option>Clap Back</option>
-            <option>In My Back Yard</option>
+            <option>Clap-back</option>
+            <option>In My Backyard</option>
         </datalist>
 
     </div>
