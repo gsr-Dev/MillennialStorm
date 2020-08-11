@@ -26,12 +26,9 @@ Route::get('/', 'ArticleController@index');
 // Route::get('/a', 'ArticleController@index');
 // Route::get('/a/create', 'ArticleController@create');
 // Route::post('/a', 'ArticleController@store');
-// Route::get('/a/{id}', 'ArticleController@show');
-// Route::get('/a/{id}/edit', 'ArticleController@edit');
-// Route::put('/a/{id}', 'ArticleController@update');
-// Route::delete('/a{id}', 'ArticleController@destroy');
+// Route::get('/a/{slug}', 'ArticleController@show');
+// Route::get('/a/{slug}/edit', 'ArticleController@edit');
+// Route::put('/a/{slug}', 'ArticleController@update');
+// Route::delete('/a{slug}', 'ArticleController@destroy');
 
-Route::resource('a', 'ArticleController');
-
-// ckeditor image upload
-Route::post('ckeditor/upload', 'CKEditorController@upload')->name('ckeditor.image-upload');
+Route::resource('article', 'ArticleController');

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use Illuminate\Http\Request;
-use GrahamCampbell\Markdown\Facades\Markdown;
-use League\CommonMark\CommonMarkConverter;
+use Illuminate\Support\Str;
+use PhpParser\Node\Arg;
 
 class ArticleController extends Controller
 {
@@ -20,8 +20,8 @@ class ArticleController extends Controller
 
 
         return view('articles.index', [
-            'articleProps' => $articleProps,
 
+            'articleProps' => $articleProps,
         ]);
     }
 
@@ -63,8 +63,11 @@ class ArticleController extends Controller
 
         // text
         $article = new Article();
+
         $article->title = $request->title;
+        $article->slug = Str::slug($article->title, '-');
         $article->description = $request->description;
+        $article->tag = request('tag');
         $article->post = request('post');
         $article->first_name = $request->firstName;
         $article->last_name = $request->lastName;
@@ -72,23 +75,14 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect('/');
+        return redirect()->route('article.index');
     }
 
 
 
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::findOrFail($id);
-        return response()->json([$article]);
+        return view('articles.show', compact('article'));
     }
 
     /**

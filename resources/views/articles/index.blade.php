@@ -9,14 +9,13 @@
                 <img src="/storage/cover_images/{{$articleProp->cover_image}}" class="card-img-top" alt="article picture">
                 <div class="card-body">
 
-                    <h6 class="text-muted text-uppercase">Politics</h6>
+                    <h6 class="text-muted text-uppercase">{{$articleProp->tag}}</h6>
                     <h3 class="card-title text-primary">{{$articleProp->title}}</h3>
                     <p class=" text-light">By {{$articleProp->first_name}} {{$articleProp->last_name}}</p>
                     <div class="text-light">
-
-                        {!! $articleProp->post !!}
-
+                        {{$articleProp->description}}
                     </div>
+                    <a href="/article/{{$articleProp->slug}}">Read more</a>
 
                 </div>
                 <div class="card-footer">
