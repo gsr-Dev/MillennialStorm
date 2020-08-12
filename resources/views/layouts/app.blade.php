@@ -27,44 +27,45 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <a href="/" class="mb-n3">
-                        <img src="/img/4XvRu9.svg" alt="logo">
+                        <img src="/img/4XvRu9.svg" alt="logo" class="img-fluid">
                     </a>
                 </div>
 
             </div>
 
-            <nav class="navbar navbar-expand-md navbar-dark nav-color border-bottom border-primary">
-                <div class="container justify-content-center">
-                    <div class="row d-flex">
-                        <ul class="nav justify-content-center">
-                            <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="{{route('category.politics')}}">Politics</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="{{route('category.reviews')}}">Reviews</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="{{route('category.motivation')}}">Motivation</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="{{route('category.clap-back')}}">Clap-back</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active text-uppercase" href="{{route('category.in-my-backyard')}}">In my backyard</a>
-                            </li>
-                        </ul>
+            <nav class="navbar navbar-expand-lg navbar-dark nav-color border-bottom border-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_toggle" aria-controls="navbar_nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbar_toggle">
+
+                    <div class="navbar-nav">
+
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.politics')}}">Politics</a>
+
+
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.reviews')}}">Reviews</a>
+
+
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.motivation')}}">Motivation</a>
+
+
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.clap-back')}}">Clap-back</a>
+
+
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.in-my-backyard')}}">In my backyard</a>
+
+
                     </div>
                 </div>
             </nav>
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-8">
+                <div class="col-sm-8">
                     <main class="py-4">
                         @yield('main')
                     </main>
                 </div>
-                <div class="col-4">
+                <div class="col-sm-4">
                     <aside class="py-4">
                         @yield('secondary')
                     </aside>
@@ -72,15 +73,16 @@
             </div>
         </div>
 
-        <footer>
-            <div class="container-fluid bg-primary">
-                <div class="d-flex flex-row justify-content-center">
-                    <div>Flex item 1</div>
-                    <div>Flex item 2</div>
-                </div>
-            </div>
-        </footer>
+
     </div>
+    <footer>
+        <div class="container-fluid bg-primary">
+            <div class="d-flex flex-row justify-content-center">
+                <div>Flex item 1</div>
+                <div>Flex item 2</div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

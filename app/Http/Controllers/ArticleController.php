@@ -18,8 +18,11 @@ class ArticleController extends Controller
     {
         $articleProps = Article::latest()->get();
 
+        $latest = Article::latest('updated_at')->get()->first();
+
 
         return view('articles.index', [
+            'latest' => $latest,
 
             'articleProps' => $articleProps,
         ]);
@@ -67,7 +70,7 @@ class ArticleController extends Controller
         $article->title = $request->title;
         $article->slug = Str::slug($article->title, '-');
         $article->description = $request->description;
-        $article->tag = request('tag');
+        $article->tag = Str::of(request('tag'))->lower();
         $article->post = request('post');
         $article->first_name = $request->firstName;
         $article->last_name = $request->lastName;
@@ -75,7 +78,7 @@ class ArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('article.index');
+        return redirect()->route('article.show', compact('article'));
     }
 
 

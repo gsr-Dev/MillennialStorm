@@ -1,6 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;
 
 500&display=swap);@charset "UTF-8";
+.body-links {
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.3s;
+  color: #ffa630;
+}
+
+.body-links:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
 .card-title {
   font-family: "Playfair Display", serif;
 }

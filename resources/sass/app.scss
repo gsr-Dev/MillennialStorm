@@ -5,6 +5,18 @@
 // Variables
 @import "variables";
 
+.body-links {
+    text-decoration: none;
+    opacity: 0.6;
+    transition: 0.3s;
+    color: #ffa630;
+}
+
+.body-links:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+
 .card-title {
     font-family: $card-title-font;
 }

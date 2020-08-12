@@ -4,28 +4,70 @@
 <div class="container">
     <div class="row justify-content-center">
         @foreach($articleProps as $articleProp)
+        @if ( $latest->id === $articleProp->id )
         <div class="container py-4 mt-2">
             <div class="card rounded-0 border-0 bg-dark">
                 <img src="/storage/cover_images/{{$articleProp->cover_image}}" class="card-img-top" alt="article picture">
                 <div class="card-body">
 
                     <h6 class="text-muted text-uppercase">
-                        <a href="{{route('category.politics')}}">{{$articleProp->tag}}</a>
+                        <a href="/category/{{$articleProp->tag}}" class="body-links">{{$articleProp->tag}}</a>
                     </h6>
-                    <h3 class="card-title text-primary">{{$articleProp->title}}</h3>
-                    <p class=" text-light">By {{$articleProp->first_name}} {{$articleProp->last_name}}</p>
-                    <div class="text-light">
-                        {{$articleProp->description}}
+                    <a href="/article/{{$articleProp->slug}}" class="body-links">
+                        <h3 class="card-title">{{$articleProp->title}}</h3>
+                    </a>
+
+                    <p class=" text-light">By <span class="text-primary">{{$articleProp->first_name}} {{$articleProp->last_name}}</span></p>
+                    <div class="text-light pb-4">
+                        {!!$articleProp->post!!}
                     </div>
-                    <a href="/article/{{$articleProp->slug}}">Read more</a>
+
 
                 </div>
-                <div class="card-footer">
-                    <p class="text-muted">{{date("Y/m/d")}}</p>
-
+                <div class="card-footer text-muted d-flex">
+                    <div class="pr-3">
+                        {{date("D, Y/m/d")}}
+                    </div>
+                    <div class="pr-3">
+                        social links
+                    </div>
                 </div>
+
             </div>
         </div>
+        @else
+
+        <div class="container py-4 mt-2">
+            <div class="card rounded-0 border-0 bg-dark">
+                <img src="/storage/cover_images/{{$articleProp->cover_image}}" class="card-img-top" alt="article picture">
+                <div class="card-body">
+
+                    <h6 class="text-muted text-uppercase">
+                        <a href="/category/{{$articleProp->tag}}" class="body-links">{{$articleProp->tag}}</a>
+                    </h6>
+                    <a href="/article/{{$articleProp->slug}}" class="body-links">
+                        <h3 class="card-title">{{$articleProp->title}}</h3>
+                    </a>
+
+                    <p class=" text-light">By <span class="text-primary">{{$articleProp->first_name}} {{$articleProp->last_name}}</span></p>
+                    <div class="text-light pb-4">
+                        {{$articleProp->description}}
+                    </div>
+                    <a href="/article/{{$articleProp->slug}}" class="card-link">Read more...</a>
+
+                </div>
+                <div class="card-footer text-muted d-flex">
+                    <div class="pr-3">
+                        {{date("D, Y/m/d")}}
+                    </div>
+                    <div class="pr-3">
+                        social links
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        @endif
         @endforeach
 
     </div>
@@ -35,16 +77,23 @@
 @section('secondary')
 <div class="container py-4 mt-2">
     <div class="card rounded-0 border-0 bg-dark">
+        <img src="/img/greg-rabone.jpg" class="card-img-top rounded-0" alt="Greg Rabone">
         <div class="card-body text-center">
-            <h4 class="card-title text-uppercase text-primary">Welcome</h4>
-            <h5 class="text-light">About</h5>
-            <h6 class="text-light text-uppercase">Greg Rabone</h6>
+
+            <a href="/about" class="body-links">
+
+                <h5 class="pt-2">About / Contact</h5>
+                <h6 class="text-light text-uppercase">Greg Rabone</h6>
+            </a>
+
+
         </div>
+
 
         <h3></h3>
     </div>
     <div class="bg-dark border-top border-primary py-4">
-        <h4 class="text-uppercase text-center">Subscribe to email</h3>
+        <h4 class="text-uppercase pl-4">Subscribe to email</h3>
             <form action="" class="px-4">
                 <div class="form-group ">
                     <label for="email">Email</label>
