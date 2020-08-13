@@ -3,6 +3,7 @@
 @section('main')
 <form action="{{route('article.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
+
     <div class="form-group">
         <label for="title" class="text-light">Title</label>
         <input type="text" name="title" id="form-title" class="form-control">
@@ -18,7 +19,6 @@
         </div>
 
     </div>
-
     <div class="form-group pt-3">
         <label for="tags" class="text-light">Select Tag</label>
         <input list="tags" name="tag">
@@ -29,18 +29,17 @@
             <option>Clap-back</option>
             <option>In My Backyard</option>
         </datalist>
-
     </div>
 
     <div class="form-group">
-        <label for="description" class="text-light">Description</label>
-        <textarea class="form-control" name="description" id="form-description" cols="30" rows="5" maxlength="500"></textarea>
+        <label for="opening" class="text-light">Opening</label>
+        <textarea type="text" name="opening" id="form-opening" class="form-control" maxlength="300" cols="50" rows="4"></textarea>
     </div>
-    <div class="form-group">
 
+
+    <div class="form-group">
         <label for="post" class="text-light">Post</label>
-        <textarea class="ckeditor form-control" name="post" id="form-post"></textarea>
-
+        <textarea name="post" id="texteditor"></textarea>
 
     </div>
     <div class="form-group">
@@ -49,11 +48,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Post</button>
 </form>
-<script src="/ckeditor/ckeditor.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.ckeditor').ckeditor();
-    });
-</script>
+
 
 @endsection

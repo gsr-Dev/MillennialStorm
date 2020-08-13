@@ -1,5 +1,5 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap");
 
 // Variables
@@ -9,7 +9,7 @@
     text-decoration: none;
     opacity: 0.6;
     transition: 0.3s;
-    color: #ffa630;
+    color: $sunshade;
 }
 
 .body-links:hover {
@@ -25,8 +25,24 @@
     background-color: $onyx;
 }
 
+.news-letter-label {
+    color: #b27321;
+}
+
+.form-control::placeholder {
+    font-style: italic;
+}
+
+.form-control::-moz-placeholder {
+    font-style: italic;
+}
+
+.form-control::-webkit-input-placeholder {
+    font-style: italic;
+}
+
 $theme-colors: (
-    "primary": #ffa630
+    "primary": $sunshade
 );
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";

@@ -12,6 +12,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script defer src="https://friconix.com/cdn/friconix.js"> </script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -60,12 +61,12 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-md-8">
                     <main class="py-4">
                         @yield('main')
                     </main>
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-4">
                     <aside class="py-4">
                         @yield('secondary')
                     </aside>
@@ -76,7 +77,7 @@
 
     </div>
     <footer>
-        <div class="container-fluid bg-primary">
+        <div class="container-fluid bg-dark">
             <div class="d-flex flex-row justify-content-center">
                 <div>Flex item 1</div>
                 <div>Flex item 2</div>

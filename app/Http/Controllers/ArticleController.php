@@ -16,15 +16,17 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articleProps = Article::latest()->get();
+        $article_props = Article::latest()->get();
+        $opening = null;
 
-        $latest = Article::latest('updated_at')->get()->first();
 
+        foreach ($article_props as $article_prop) {
+            $opening = Str::of($article_prop->opening)->append('...');
+        }
 
         return view('articles.index', [
-            'latest' => $latest,
-
-            'articleProps' => $articleProps,
+            'opening' => $opening,
+            'article_props' => $article_props,
         ]);
     }
 
@@ -67,9 +69,10 @@ class ArticleController extends Controller
         // text
         $article = new Article();
 
+
         $article->title = $request->title;
         $article->slug = Str::slug($article->title, '-');
-        $article->description = $request->description;
+        $article->opening = $request->opening;
         $article->tag = Str::of(request('tag'))->lower();
         $article->post = request('post');
         $article->first_name = $request->firstName;
@@ -85,7 +88,8 @@ class ArticleController extends Controller
 
     public function show(Article $article)
     {
-        return view('articles.show', compact('article'));
+        $more_tag = '... <span id="more"></span>';
+        return view('articles.show', compact('article', 'more_tag'));
     }
 
     /**

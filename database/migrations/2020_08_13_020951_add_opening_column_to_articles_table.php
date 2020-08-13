@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTagColumnToArticles extends Migration
+class AddOpeningColumnToArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddTagColumnToArticles extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->string('tag')->after('post');
+            $table->mediumText('opening')->after('title')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddTagColumnToArticles extends Migration
     public function down()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->dropColumn('tag');
+            $table->dropColumn('opening');
         });
     }
 }
