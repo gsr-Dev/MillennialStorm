@@ -20,20 +20,17 @@
                     <div class="text-light pb-4">
                         {!! $opening !!}
                     </div>
-                    <a href="/article/{{$article_prop->slug}}#more">Read More</a>
+                    <a href="/article/{{$article_prop->slug}}" class="">Read More &#8594</a>
 
                 </div>
-                <div class="card-footer text-muted d-flex">
-                    <div class="pr-3">
-                        {{date("D, Y/m/d")}}
-                    </div>
-                    <div class="pr-3">
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a href="#">Facebook</a></li>
-                            <li class="list-inline-item"><a href="#">Twitter</a></li>
-                            <li class="list-inline-item"><a href="#">Email</a></li>
-                        </ul>
-                    </div>
+                <div class="card-footer text-muted d-flex justify-content-center">
+
+                    <ul class="list-inline text-uppercase">
+                        <li class="list-inline-item px-2"><a href="#">Facebook</a></li>
+                        <li class="list-inline-item px-2 border-left border-right border-primary"><a href="#">Twitter</a></li>
+                        <li class="list-inline-item px-2"><a href="#">Email</a></li>
+                    </ul>
+
                 </div>
 
             </div>
@@ -47,8 +44,8 @@
 
 @section('secondary')
 <div class="container py-4 mt-2">
-    <div class="card rounded-0 border-0 bg-dark">
-        <img src="/img/greg-rabone.jpg" class="card-img-top rounded-0" alt="Greg Rabone">
+    <!-- <div class="card rounded-0 border-0 bg-dark">
+        <img src="/img/greg-rabone.jpg" class="card-img-top" alt="Greg Rabone">
         <div class="card-body text-center">
 
             <a href="/about" class="body-links">
@@ -57,6 +54,15 @@
 
             </a>
         </div>
+    </div> -->
+    <div class="bg-dark py-4 d-flex flex-column">
+        <h5 class="text-uppercase text-primary text-center">Follow Us</h5>
+        <div class="d-flex justify-content-center mx-auto pt-2">
+            <a href="#"><i class="fi-xnsuxl-facebook text-primary px-2"></i></a>
+            <a href="#"><i class="fi-xnsuxl-twitter text-primary px-2 border-left border-right border-primary"></i></a>
+            <a href="#"><i class="fi-xnsuxl-instagram text-primary px-2"></i></a>
+        </div>
+        <a href="#" class="mx-auto pt-4">Contact</a>
     </div>
     <div class="bg-dark border-top border-primary py-4">
         <h5 class="text-uppercase text-primary text-center">Subscribe to the newsletter</h5>
@@ -96,17 +102,8 @@
                      rounded-0 
                      border-primary" placeholder="Last Name...">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
         </form>
-    </div>
-    <div class="bg-dark border-top border-primary py-4">
-        <h5 class="text-uppercase text-primary text-center">Follow</h5>
-        <div class="d-flex justify-content-center mx-auto">
-            <a href="#"><i class="fi-xnsuxl-facebook text-primary px-2"></i></a>
-            <a href="#"><i class="fi-xnsuxl-facebook text-primary px-2"></i></a>
-            <a href="#"><i class="fi-xnsuxl-facebook text-primary px-2"></i></a>
-
-        </div>
     </div>
 </div>
 

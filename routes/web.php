@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -43,16 +44,18 @@ Route::prefix('category')->group(function () {
     })->name('category.in-my-backyard');
 });
 
-// resource routes 
-// Route::get('/article', 'ArticleController@index');
-// Route::get('/article/create', 'ArticleController@create');
-// Route::post('/article', 'ArticleController@store');
-// Route::get('/article/{slug}', 'ArticleController@show');
-// Route::get('/article/{slug}/edit', 'ArticleController@edit');
-// Route::put('/article/{slug}', 'ArticleController@update');
-// Route::delete('/article/{slug}', 'ArticleController@destroy');
 
-Route::resource('article', 'ArticleController');
 
-// .com URL hit
+
+
+// dashboard routes 
+Route::resource('dashboard', 'DashboardController');
+
+Route::get('/about', function () {
+    return 'about';
+});
+
+Route::get('/articles', 'ArticleController@index');
+Route::get('/articles/{slug}', 'ArticleController@show');
+
 Route::get('/', 'ArticleController@index');

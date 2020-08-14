@@ -1,7 +1,7 @@
-@extends('layouts.creator')
+@extends('layouts.dashboard')
 
 @section('main')
-<form action="{{route('article.store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{route('dashboard.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
@@ -30,12 +30,6 @@
             <option>In My Backyard</option>
         </datalist>
     </div>
-
-    <div class="form-group">
-        <label for="opening" class="text-light">Opening</label>
-        <textarea type="text" name="opening" id="form-opening" class="form-control" maxlength="300" cols="50" rows="4"></textarea>
-    </div>
-
 
     <div class="form-group">
         <label for="post" class="text-light">Post</label>

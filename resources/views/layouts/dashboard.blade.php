@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Millennial Storm</title>
+    <title>Dashboard</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -124,11 +124,6 @@
         </div>
 
     </div>
-    <footer class="fixed-bottom">
-        Copyright 2020 Greg
-    </footer>
-
-
 </body>
 
 </html>
