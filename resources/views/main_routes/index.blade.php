@@ -5,40 +5,46 @@
     <div class="row justify-content-center">
         @foreach($article_props as $article_prop)
         <div class="container py-4 mt-2">
-            <div class="card rounded-0 border-0 bg-dark">
-                <img src="/storage/cover_images/{{$article_prop->cover_image}}" class="card-img-top" alt="article picture">
-                <div class="card-body">
-
-                    <h6 class="text-muted text-uppercase">
+            <div class="card rounded-0 border-0 body-color">
+                <img src="/storage/cover_images/{{$article_prop->cover_image}}" class="card-img-top rounded-0" alt="article picture">
+                <div class="body-color">
+                    <h6 class="text-muted text-uppercase pt-4">
                         <a href="/category/{{$article_prop->tag}}" class="body-links">{{$article_prop->tag}}</a>
                     </h6>
                     <a href="/article/{{$article_prop->slug}}" class="body-links">
                         <h3 class="card-title">{{$article_prop->title}}</h3>
                     </a>
-
-                    <p class=" text-light">By <span class="text-primary">{{$article_prop->first_name}} {{$article_prop->last_name}}</span></p>
-                    <div class="text-light pb-4">
+                    <div class="text-light post-body-font pb-4">
                         {!! $opening !!}
                     </div>
-                    <a href="/article/{{$article_prop->slug}}" class="">Read More &#8594</a>
+                    <div class="d-flex">
+                        <a href="/article/{{$article_prop->slug}}" class="">Read More &#8594</a>
+                        <p><span class="text-light text-muted">{{$article_prop->first_name}} {{$article_prop->last_name}}</span></p>
+                    </div>
+
+                    <div class=" text-muted d-flex justify-content-center">
+                        <ul class="list-inline text-uppercase mb-0">
+                            <li class="list-inline-item px-2"><a href="#">Facebook</a></li>
+                            <li class="list-inline-item px-2 border-left border-right border-primary"><a href="#">Twitter</a></li>
+                            <li class="list-inline-item px-2"><a href="#">Email</a></li>
+                        </ul>
+                    </div>
 
                 </div>
-                <div class="card-footer text-muted d-flex justify-content-center">
-
-                    <ul class="list-inline text-uppercase">
-                        <li class="list-inline-item px-2"><a href="#">Facebook</a></li>
-                        <li class="list-inline-item px-2 border-left border-right border-primary"><a href="#">Twitter</a></li>
-                        <li class="list-inline-item px-2"><a href="#">Email</a></li>
-                    </ul>
-
-                </div>
-
             </div>
+
         </div>
 
         @endforeach
 
     </div>
+
+
+
+
+
+
+
 </div>
 @endsection
 

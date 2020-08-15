@@ -17,7 +17,7 @@
 
 
 
-            <p class=" text-light">By <span class="text-primary">{{$query->first_name}} {{$query->last_name}}</span></p>
+            <p class=" text-light"><span class="text-primary">{{$query->first_name}} {{$query->last_name}}</span></p>
             <div class="text-light pb-4">
                 {!! $query->post !!}
             </div>

@@ -17,16 +17,13 @@
     opacity: 1;
 }
 
-.card-title {
-    font-family: $card-title-font;
-}
-
-.nav-color {
+.body-color {
     background-color: $onyx;
 }
 
-.bg-main {
-    background-color: $onyx;
+.post-body-font {
+    font-family: $post-body-font;
+    font-size: 16px;
 }
 
 .news-letter-label {

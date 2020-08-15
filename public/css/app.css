@@ -13,12 +13,13 @@
   opacity: 1;
 }
 
-.card-title {
-  font-family: "Playfair Display", serif;
+.body-color {
+  background-color: #313436;
 }
 
-.nav-color {
-  background-color: #313436;
+.post-body-font {
+  font-family: "Playfair Display", serif;
+  font-size: 16px;
 }
 
 .news-letter-label {

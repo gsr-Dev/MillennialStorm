@@ -24,7 +24,7 @@
 
 <body>
     <div id="app" class="min-vh-100">
-        <header role="banner" class="nav-color">
+        <header role="banner" class="body-color">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <a href="/" class="mb-n3">
@@ -34,7 +34,7 @@
 
             </div>
 
-            <nav class="navbar navbar-expand-lg navbar-dark nav-color border-bottom border-primary">
+            <nav class="navbar navbar-expand-lg navbar-dark body-color border-bottom border-primary">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_toggle" aria-controls="navbar_nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbar_toggle">
 
