@@ -20,33 +20,13 @@ Auth::routes();
 
 Route::get('/creator/login', 'HomeController@index')->name('home');
 
-
 Route::prefix('category')->group(function () {
-
-    Route::get('politics', function () {
-        return "politics";
-    })->name('category.politics');
-
-    Route::get('reviews', function () {
-        return "reviews";
-    })->name('category.reviews');
-
-    Route::get('motivation', function () {
-        return "motivation";
-    })->name('category.motivation');
-
-    Route::get('clap-back', function () {
-        return "clap-back";
-    })->name('category.clap-back');
-
-    Route::get('in-my-backyard', function () {
-        return "in-my-backyard";
-    })->name('category.in-my-backyard');
+    Route::get('politics', 'CategoryController@index')->name('category.politics');
+    Route::get('reviews', 'CategoryController@index')->name('category.reviews');
+    Route::get('motivation', 'CategoryController@index')->name('category.motivation');
+    Route::get('clap-back', 'CategoryController@index')->name('category.clap-back');
+    Route::get('in-my-backyard', 'CategoryController@index')->name('category.in-my-backyard');
 });
-
-
-
-
 
 // dashboard routes 
 Route::resource('dashboard', 'DashboardController');

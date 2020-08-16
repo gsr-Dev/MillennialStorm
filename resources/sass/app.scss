@@ -21,11 +21,6 @@
     background-color: $onyx;
 }
 
-.post-body-font {
-    font-family: $post-body-font;
-    font-size: 16px;
-}
-
 .news-letter-label {
     color: #b27321;
 }
@@ -43,7 +38,8 @@
 }
 
 $theme-colors: (
-    "primary": $sunshade
+    "primary": $sunshade,
+    "light": #c6c7c8
 );
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";

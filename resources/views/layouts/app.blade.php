@@ -41,20 +41,10 @@
                     <div class="navbar-nav">
 
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.politics')}}">Politics</a>
-
-
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.reviews')}}">Reviews</a>
-
-
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.motivation')}}">Motivation</a>
-
-
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.clap-back')}}">Clap-back</a>
-
-
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.in-my-backyard')}}">In my backyard</a>
-
-
                     </div>
                 </div>
             </nav>
@@ -62,25 +52,85 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <main class="py-4">
+                    <main>
                         @yield('main')
                     </main>
                 </div>
                 <div class="col-lg-4">
-                    <aside class="py-4">
-                        @yield('secondary')
+                    <aside>
+                        <div class="container my-4">
+                            <div class="bg-dark py-4 d-flex flex-column">
+                                <h5 class="text-uppercase text-primary text-center">Follow Us</h5>
+                                <div class="d-flex justify-content-center mx-auto pt-2">
+                                    <a href="#"><i class="fi-xnsuxl-facebook text-primary px-2"></i></a>
+                                    <a href="#"><i class="fi-xnsuxl-twitter text-primary px-2 border-left border-right border-primary"></i></a>
+                                    <a href="#"><i class="fi-xnsuxl-instagram text-primary px-2"></i></a>
+                                </div>
+                                <a href="#" class="mx-auto pt-4">Contact</a>
+                            </div>
+                            <div class="bg-dark border-top border-primary py-4">
+                                <h5 class="text-uppercase text-primary text-center">Subscribe to the newsletter</h5>
+                                <form action="" class="px-4">
+                                    <div class="form-group pt-2">
+                                        <input type="email" name="email" id="email" class="form-control 
+                                        shadow-none 
+                                        bg-dark 
+                                        border-top-0 
+                                        border-left-0 
+                                        border-right-0 
+                                        rounded-0 
+                                        border-primary" placeholder="Email...">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="first-name" id="first-name" class="form-control
+                                        shadow-none
+                                        bg-dark
+                                        border-top-0
+                                        border-left-0
+                                        border-right-0
+                                        rounded-0
+                                        border-primary" placeholder="First Name...">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="last-name" id="last-name" class="form-control
+                                        shadow-none
+                                        bg-dark
+                                        border-top-0
+                                        border-left-0
+                                        border-right-0
+                                        rounded-0 
+                                        border-primary" placeholder="Last Name...">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
                     </aside>
                 </div>
             </div>
         </div>
-
-
     </div>
     <footer>
-        <div class="container-fluid bg-dark">
-            <div class="d-flex flex-row justify-content-center">
-                <div>Flex item 1</div>
-                <div>Flex item 2</div>
+        <div class="container-fluid bg-dark mt-4">
+            <div class="container d-flex flex-row justify-content-left">
+                <ul class="list-group list-group-flush bg-dark">
+                    <li class="list-group-item bg-dark text-primary border-0"><strong>About</strong></li>
+                    <li class="list-group-item bg-dark text-primary border-0">Millennial Storm</li>
+                    <li class="list-group-item bg-dark text-primary border-0">Contributors</li>
+                    <li class="list-group-item bg-dark text-primary border-0">Contact</li>
+                </ul>
+                <ul class="list-group list-group-flush bg-dark mr-2">
+                    <li class="list-group-item bg-dark text-primary border-0"><strong>Legal</strong></li>
+                    <li class="list-group-item bg-dark text-primary border-0">Privacy Policy</li>
+                    <li class="list-group-item bg-dark text-primary border-0">Terms of Service</li>
+                    <li class="list-group-item bg-dark text-primary border-0">Code of Conduct</li>
+                </ul>
+
+
+            </div>
+            <div class="container py-4 text-muted">
+                &copy; 2020 Millennial Storm. All rights reserved. Hand-coded in Aotearoa / New Zealand by local talent.
             </div>
         </div>
     </footer>
