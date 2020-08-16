@@ -21,10 +21,9 @@ Auth::routes();
 Route::get('/creator/login', 'HomeController@index')->name('home');
 
 Route::prefix('category')->group(function () {
-    Route::get('politics', 'CategoryController@index')->name('category.politics');
-    Route::get('reviews', 'CategoryController@index')->name('category.reviews');
-    Route::get('motivation', 'CategoryController@index')->name('category.motivation');
-    Route::get('clap-back', 'CategoryController@index')->name('category.clap-back');
+    Route::get('irl', 'CategoryController@index')->name('category.irl');
+    Route::get('on-the-web', 'CategoryController@index')->name('category.on-the-web');
+    Route::get('lifestyle-&-motivation', 'CategoryController@index')->name('category.lifestyle-&-motivation');
     Route::get('in-my-backyard', 'CategoryController@index')->name('category.in-my-backyard');
 });
 

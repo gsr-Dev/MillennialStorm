@@ -40,10 +40,10 @@
 
                     <div class="navbar-nav">
 
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.politics')}}">Politics</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.reviews')}}">Reviews</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.motivation')}}">Motivation</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.clap-back')}}">Clap-back</a>
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.irl')}}">irl</a>
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.on-the-web')}}">On the web</a>
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.lifestyle-&-motivation')}}">Lifestyle & Motivation</a>
+
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.in-my-backyard')}}">In my backyard</a>
                     </div>
                 </div>

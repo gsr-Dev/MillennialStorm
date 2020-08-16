@@ -8,6 +8,10 @@
         <label for="title" class="text-light">Title</label>
         <input type="text" name="title" id="form-title" class="form-control">
     </div>
+    <div class="form-group">
+        <label for="remark" class="text-light">Remark</label>
+        <textarea name="remark" id="form-remark" class="form-control" cols="20" rows="4"></textarea>
+    </div>
     <div class="form-row align-items-center">
         <div class="col-auto">
             <label for="firstName" class="text-light">First Name</label>
@@ -23,11 +27,10 @@
         <label for="tags" class="text-light">Select Tag</label>
         <input list="tags" name="tag">
         <datalist id="tags">
-            <option>Politics</option>
-            <option>Reviews</option>
-            <option>Motivation</option>
-            <option>Clap-back</option>
-            <option>In My Backyard</option>
+            <option>IRL</option>
+            <option>On the Web</option>
+            <option>Lifestyle & Motivation</option>
+            <option>In my backyard</option>
         </datalist>
     </div>
 

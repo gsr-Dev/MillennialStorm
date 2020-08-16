@@ -12,24 +12,20 @@ class CategoryController extends Controller
         $path = $request->path();
 
         switch ($path) {
-            case "category/politics":
-                $articles = Article::where('tag', 'politics')->get();
+            case "category/irl":
+                $articles = Article::where('tag', 'irl')->get();
                 return view('categories.category', compact('articles'));
                 break;
-            case "category/reviews":
-                $articles = Article::where('tag', 'reviews')->get();
+            case "category/on-the-web":
+                $articles = Article::where('tag', 'on the web')->get();
                 return view('categories.category', compact('articles'));
                 break;
-            case "category/motivation":
-                $articles = Article::where('tag', 'motivation')->get();
-                return view('categories.category', compact('articles'));
-                break;
-            case "category/clap-back":
-                $articles = Article::where('tag', 'clap-back')->get();
+            case "category/lifestyle-&-motivation":
+                $articles = Article::where('tag', 'lifestyle & motivation')->get();
                 return view('categories.category', compact('articles'));
                 break;
             case "category/in-my-backyard":
-                $articles = Article::where('tag', 'in-my-backyard')->get();
+                $articles = Article::where('tag', 'in my backyard')->get();
                 return view('categories.category', compact('articles'));
                 break;
         }

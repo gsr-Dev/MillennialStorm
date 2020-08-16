@@ -88,30 +88,16 @@
 </head>
 
 <body>
-
     <div id="app" class="min-vh-100">
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark nav-color border-bottom border-primary">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_toggle" aria-controls="navbar_nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbar_toggle">
-
                     <div class="navbar-nav">
-
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.politics')}}">Politics</a>
-
-
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.reviews')}}">Reviews</a>
-
-
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.motivation')}}">Motivation</a>
-
-
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.clap-back')}}">Clap-back</a>
-
-
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.irl')}}">IRL</a>
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.on-the-web')}}">Reviews</a>
+                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.lifestyle-&-motivation')}}">Lifestyle & Motivation</a>
                         <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.in-my-backyard')}}">In my backyard</a>
-
-
                     </div>
                 </div>
             </nav>

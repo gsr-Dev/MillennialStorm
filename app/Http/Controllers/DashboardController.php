@@ -58,8 +58,8 @@ class DashboardController extends Controller
 
 
         $article->title = $request->title;
+        $article->remark = $request->remark;
         $article->slug = Str::slug($article->title, '-');
-
         $article->tag = Str::of(request('tag'))->lower();
         $article->post = request('post');
         $article->first_name = $request->firstName;
@@ -67,6 +67,7 @@ class DashboardController extends Controller
         $article->cover_image = $fileNameToStore;
 
         $article->save();
+
 
         return redirect()->route('dashboard.index');
     }
