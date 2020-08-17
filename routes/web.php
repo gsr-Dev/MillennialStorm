@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/creator/login', 'HomeController@index')->name('home');
+// Route::get('/dashboard/login', 'HomeController@index')->name('home');
 
 Route::prefix('category')->group(function () {
     Route::get('irl', 'CategoryController@index')->name('category.irl');
@@ -34,7 +34,7 @@ Route::get('/about', function () {
     return 'about';
 });
 
-Route::get('/articles', 'ArticleController@index');
+Route::get('/articles', 'CategoryController@index');
 Route::get('/articles/{slug}', 'ArticleController@show');
 
-Route::get('/', 'ArticleController@index');
+Route::get('/', 'ArticleController@index')->name('home');

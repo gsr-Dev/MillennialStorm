@@ -90,24 +90,36 @@
 <body>
     <div id="app" class="min-vh-100">
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark nav-color border-bottom border-primary">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_toggle" aria-controls="navbar_nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbar_toggle">
-                    <div class="navbar-nav">
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.irl')}}">IRL</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.on-the-web')}}">Reviews</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.lifestyle-&-motivation')}}">Lifestyle & Motivation</a>
-                        <a class="nav-link text-uppercase text-primary px-3" href="{{route('category.in-my-backyard')}}">In my backyard</a>
-                    </div>
+            <nav class="navbar navbar-expand-lg navbar-dark nav-color border-bottom border-primary d-flex justify-content-end">
+                <div class="navbar-nav">
+                    <a href="{{route('home')}}" class="btn btn-primary">Home</a>
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
                 </div>
+
             </nav>
+
         </header>
 
-        <div class="container">
-            <main class="py-4">
-                @yield('main')
-            </main>
-        </div>
+
+        <main class="py-4">
+            @yield('main')
+        </main>
+
 
     </div>
 </body>

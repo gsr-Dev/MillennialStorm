@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use Facade\Ignition\QueryRecorder\Query;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
 
@@ -20,10 +18,6 @@ class ArticleController extends Controller
             'article_props' => $article_props
         ]);
     }
-
-
-
-
 
 
     public function show($slug)

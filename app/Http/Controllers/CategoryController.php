@@ -28,6 +28,9 @@ class CategoryController extends Controller
                 $articles = Article::where('tag', 'in my backyard')->get();
                 return view('categories.category', compact('articles'));
                 break;
+            default:
+                $articles = Article::all();
+                return view('categories.category', compact('articles'));
         }
     }
 }
