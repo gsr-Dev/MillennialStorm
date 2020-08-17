@@ -21,6 +21,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $user_id = auth()->user()->id;
+        dd($user_id);
         return view('dashboard.index')->with('status', 'Login Successful!');
     }
 
