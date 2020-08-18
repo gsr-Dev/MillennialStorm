@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <div class="row">
 
-        <div class="card-deck">
+        <div class="card-deck w-50">
             @foreach($articles as $article)
 
             <div class="card rounded-0 border-0">
@@ -12,7 +12,6 @@
 
                 <div class="card-body bg-dark">
                     <h5 class="card-title text-primary">{{$article->title}}</h5>
-                    <p class="card-text text-light">{{$article->remark}}</p>
                 </div>
 
             </div>

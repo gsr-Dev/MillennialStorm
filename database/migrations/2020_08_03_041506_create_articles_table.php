@@ -20,7 +20,7 @@ class CreateArticlesTable extends Migration
             $table->string("title");
             $table->longText("post");
             $table->string("cover_image");
-            $table->integer();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
 

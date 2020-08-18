@@ -12,7 +12,7 @@
                     <a href="/articles/{{$query->slug}}" class="body-links">
                         <h3 class="card-title text-uppercase"><strong>{{$query->title}}</strong></h3>
                     </a>
-                    <p><span class="text-light text-muted">{{$query->first_name}} {{$query->last_name}}</span></p>
+                    <p><span class="text-light text-muted">{{$query->author}}</span></p>
                     <div class="text-light pb-4">
                         {!!$query->post!!}
                     </div>

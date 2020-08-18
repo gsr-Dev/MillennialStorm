@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Article;
-use GuzzleHttp\Middleware;
+use App\User;
+use App\Helpers\ImageStorage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class DashboardController extends Controller
@@ -22,8 +24,8 @@ class DashboardController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-        dd($user_id);
-        return view('dashboard.index')->with('status', 'Login Successful!');
+        $user = User::find($user_id);
+        return view('dashboard.index')->with(['status' => 'Login Successful!', 'articles' => $user->articles]);
     }
 
     /**
@@ -44,35 +46,20 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('cover_image')) {
-            // fullname
-            $fileNameWithExtension = $request->file('cover_image')->getClientOriginalName();
-            // just file name 
-            $name = pathinfo($fileNameWithExtension, PATHINFO_FILENAME);
-            // extenstion
-            $extension = $request->file('cover_image')->getClientOriginalExtension();
-            //store name 
-            $fileNameToStore = $name . '_' . time() . '.' . $extension;
 
-
-
-            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
-        } else {
-            $fileNameToStore = "noimage.jpg";
-        }
-
-        // text
+        $image_store = new ImageStorage();
         $article = new Article();
 
 
+
         $article->title = $request->title;
+        $article->author = auth()->user()->name;
         $article->remark = $request->remark;
         $article->slug = Str::slug($article->title, '-');
         $article->tag = Str::of(request('tag'))->lower();
         $article->post = request('post');
-        $article->first_name = $request->firstName;
-        $article->last_name = $request->lastName;
-        $article->cover_image = $fileNameToStore;
+        $article->cover_image = $image_store->storeImage($request); //$fileNameToStore;
+        $article->user_id = auth()->id();
 
         $article->save();
 
@@ -121,6 +108,9 @@ class DashboardController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        Storage::delete($article->cover_image);
+        $article->delete();
+        return redirect()->route('dashboard.index');
     }
 }

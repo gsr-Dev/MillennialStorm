@@ -13,17 +13,7 @@
             <label for="remark" class="text-light">Remark</label>
             <textarea name="remark" id="form-remark" class="form-control" cols="20" rows="4"></textarea>
         </div>
-        <div class="form-row align-items-center">
-            <div class="col-auto">
-                <label for="firstName" class="text-light">First Name</label>
-                <input type="text" name="firstName" id="form-firstName" class="form-control">
-            </div>
-            <div class="col-auto">
-                <label for="lastName" class="text-light">Last Name</label>
-                <input type="text" name="lastName" id="form-lastName" class="form-control">
-            </div>
 
-        </div>
         <div class="form-group pt-3">
             <label for="tags" class="text-light">Select Tag</label>
             <input list="tags" name="tag">
