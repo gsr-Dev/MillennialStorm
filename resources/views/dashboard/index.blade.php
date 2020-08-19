@@ -3,10 +3,21 @@
 @section('main')
 <div class="container">
     @if (session('status'))
-    <div class="alert alert-success">
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
         {{ session('status') }}
+        <button class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @elseif(session('update'))
+    <div class="alert alert-success alert-dismissable fade show" role="alert">
+        {{ session('update') }}
+        <button class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     @endif
+    <a href="{{route('dashboard.create')}}" class="btn btn-primary mb-2">Create article</a>
     <div class="row justify-content-center">
         <table class="table table-hover table-dark">
             <thead>
@@ -16,7 +27,6 @@
                     <th>Author</th>
                     <th>Tag</th>
                     <th>Created @</th>
-                    <th><a href="{{route('dashboard.create')}}" class="btn btn-primary">Create</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +43,7 @@
                         <button class="btn btn-danger">Delete</button>
                     </form>
                 </td>
+                <td><a href="{{route('dashboard.edit', $article->id)}}" class="btn btn-secondary">Edit</a></td>
                 @endforeach
             </tbody>
         </table>

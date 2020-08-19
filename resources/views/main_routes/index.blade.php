@@ -9,19 +9,15 @@
                 <img src="/storage/cover_images/{{$article_prop->cover_image}}" class="card-img-top rounded-0 img-fluid" alt="article picture">
                 <div class="body-color">
                     <h6 class="text-muted text-uppercase pt-4">
-                        <a href="/category/{{$article_prop->tag}}" class="body-links">{{$article_prop->tag}}</a>
+                        <a href="/category/{{$article_prop->tag_slug}}" class="body-links">{{$article_prop->tag}}</a>
                     </h6>
-                    <a href="/articles/{{$article_prop->slug}}" class="body-links">
+                    <a href="/article/{{$article_prop->slug}}" class="body-links">
                         <h3 class="card-title text-uppercase"><strong>{{$article_prop->title}}</strong></h3>
                     </a>
                     <p><span class="text-light text-muted text-uppercase">{{date('m/d/Y')}}</span></p>
                     <div class="text-light post-body-font pb-4">
-
+                        {{$article_prop->remark}}
                     </div>
-
-                    <a href="/articles/{{$article_prop->slug}}" class="">Read More &#8594</a>
-
-
                     <div class=" text-muted d-flex justify-content-center">
                         <ul class="list-inline text-uppercase mb-0">
                             <li class="list-inline-item px-2"><a href="#">Facebook</a></li>
@@ -32,11 +28,8 @@
 
                 </div>
             </div>
-
         </div>
-
         @endforeach
-
     </div>
 </div>
 @endsection

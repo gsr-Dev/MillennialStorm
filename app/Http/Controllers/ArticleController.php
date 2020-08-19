@@ -23,6 +23,6 @@ class ArticleController extends Controller
     public function show($slug)
     {
         $query = DB::table('articles')->where('slug', $slug)->first();
-        return view('main_routes.articles', compact('query'));
+        return view('main_routes.article', compact('query'));
     }
 }

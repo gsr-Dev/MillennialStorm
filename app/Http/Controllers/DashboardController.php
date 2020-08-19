@@ -57,6 +57,7 @@ class DashboardController extends Controller
         $article->remark = $request->remark;
         $article->slug = Str::slug($article->title, '-');
         $article->tag = Str::of(request('tag'))->lower();
+        $article->tag_slug = Str::slug(Str::of($article->tag)->lower(), '-');
         $article->post = request('post');
         $article->cover_image = $image_store->storeImage($request); //$fileNameToStore;
         $article->user_id = auth()->id();
@@ -67,16 +68,7 @@ class DashboardController extends Controller
         return redirect()->route('dashboard.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        return view('dashboard.index', compact('article'));
-    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -85,7 +77,8 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::findOrFail($id);
+        return view('dashboard.edit')->with('article', $article);
     }
 
     /**
@@ -97,7 +90,25 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image_store = new ImageStorage();
+        $article = Article::findOrFail($id);
+
+
+
+        $article->title = $request->title;
+        $article->author = auth()->user()->name;
+        $article->remark = $request->remark;
+        $article->slug = Str::slug($article->title, '-');
+        $article->tag = Str::of(request('tag'))->lower();
+        $article->tag_slug = Str::slug(Str::of($article->tag)->lower(), '-');
+        $article->post = request('post');
+        $article->cover_image = $image_store->storeImage($request); //$fileNameToStore;
+        $article->user_id = auth()->id();
+
+        $article->save();
+
+
+        return redirect()->route('dashboard.index')->with('update', 'Article updated!');
     }
 
     /**
@@ -109,8 +120,12 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
-        Storage::delete($article->cover_image);
+        $file_on_disk = Storage::disk('local')->exists('/public/cover_images/' . $article->cover_image);
+        if ($file_on_disk) {
+            Storage::disk('local')->delete('/public/cover_images/' . $article->cover_image);
+        }
+
         $article->delete();
-        return redirect()->route('dashboard.index');
+        return redirect()->route('dashboard.index')->with('status', 'Article deleted!');
     }
 }

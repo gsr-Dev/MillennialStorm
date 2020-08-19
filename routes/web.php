@@ -28,13 +28,21 @@ Route::prefix('category')->group(function () {
 });
 
 // dashboard routes 
-Route::resource('dashboard', 'DashboardController');
+
+Route::prefix('dashboard')->group(function () {
+    Route::get('/', "DashboardController@index")->name('dashboard.index');
+    Route::get('create', 'DashboardController@create')->name('dashboard.create');
+    Route::delete('articles/{id}', 'DashboardController@destroy')->name('dashboard.destroy');
+    Route::post('store', 'DashboardController@store')->name('dashboard.store');
+    Route::get('articles/{id}/edit', 'DashboardController@edit')->name('dashboard.edit');
+    Route::patch('articles/{id}', 'DashboardController@update')->name('dashboard.update');
+});
 
 Route::get('/about', function () {
     return 'about';
 });
 
 Route::get('/articles', 'CategoryController@index');
-Route::get('/articles/{slug}', 'ArticleController@show');
+Route::get('/article/{slug}', 'ArticleController@show');
 
 Route::get('/', 'ArticleController@index')->name('home');
