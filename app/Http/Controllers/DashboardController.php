@@ -114,7 +114,7 @@ class DashboardController extends Controller
         $article->save();
 
 
-        return redirect()->route('dashboard.index')->with('update', 'Article updated!');
+        return redirect()->route('dashboard.index')->with('update', 'Article Updated!');
     }
 
     /**
@@ -132,6 +132,6 @@ class DashboardController extends Controller
         }
 
         $article->delete();
-        return redirect()->route('dashboard.index')->with('delete', 'Article deleted!');
+        return redirect()->route('dashboard.index')->with('delete', 'Article Deleted!');
     }
 }

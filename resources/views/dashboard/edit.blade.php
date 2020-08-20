@@ -35,7 +35,7 @@
             <input type="file" class="form-control-file text-light" name="cover_image">
         </div>
         <div class="d-flex">
-            <button type="submit" class="btn btn-primary">Post</button>
+            <button type="submit" class="btn btn-primary">Complete Edit</button>
             <button type="reset" class="btn btn-secondary ml-2">Reset</button>
             <a href="{{route('dashboard.index')}}" class="btn btn-secondary ml-2">Back To Dashboard</a>
         </div>

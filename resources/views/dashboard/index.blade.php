@@ -26,19 +26,23 @@
     @endif
 </div>
 <div class="container">
-    <a href="{{route('dashboard.create')}}" class="btn btn-primary mb-2 ml-2">Create article</a>
+    <h1 class="text-primary">Article Dashboard</h1>
+    <a href="{{route('dashboard.create')}}" class="btn btn-primary my-2">Create Article</a>
 
-    @foreach($articles as $article)
-    <div class="text-primary border my-2 p-2">
+    @foreach($articles->sortByDesc('id') as $article)
+    <div class="border border-dark my-2 p-2">
         <div class="row mx-2 d-flex justify-content-between">
-            <p>{{$article->id}}</p>
-            <p>{{$article->title}}</p>
-            <p>{{$article->author}}</p>
-            <p>{{$article->tag}}</p>
-            <p>{{$article->created_at}}</p>
+
+            <h5 class="text-primary">{{$article->title}}</h5>
+            <div class="text-light d-flex">
+                <p class="ml-2">{{$article->author}}</p>
+                <p class="ml-2 text-uppercase">{{$article->tag}}</p>
+                <p class="ml-2">{{$article->created_at}}</p>
+            </div>
+
         </div>
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" id="dashMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post menu</button>
+            <button class="btn btn-outline-secondary dropdown-toggle" id="dashMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Post Menu</button>
             <div class="dropdown-menu" aria-labelledby="dashMenuButton">
                 <a href="{{route('dashboard.show', $article->id)}}" class="dropdown-item">Show Article</a>
                 <a href="{{route('dashboard.edit', $article->id)}}" class="dropdown-item">Edit</a>
