@@ -14,7 +14,7 @@
                     <a href="/article/{{$article_prop->slug}}" class="body-links">
                         <h3 class="card-title text-uppercase"><strong>{{$article_prop->title}}</strong></h3>
                     </a>
-                    <p><span class="text-light text-muted text-uppercase">{{date('m/d/Y')}}</span></p>
+                    <p><span class="text-light text-muted text-uppercase">{{$article_prop->created_at}}</span></p>
                     <div class="text-light post-body-font pb-4">
                         {{$article_prop->remark}}
                     </div>

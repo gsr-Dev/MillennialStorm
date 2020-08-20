@@ -25,7 +25,7 @@ class DashboardController extends Controller
     {
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        return view('dashboard.index')->with(['status' => 'Login Successful!', 'articles' => $user->articles]);
+        return view('dashboard.index')->with(['articles' => $user->articles]);
     }
 
     /**
@@ -66,6 +66,12 @@ class DashboardController extends Controller
 
 
         return redirect()->route('dashboard.index');
+    }
+
+    public function show($id)
+    {
+        $article = Article::findOrFail($id);
+        return view('dashboard.show')->with('article', $article);
     }
 
 
@@ -126,6 +132,6 @@ class DashboardController extends Controller
         }
 
         $article->delete();
-        return redirect()->route('dashboard.index')->with('status', 'Article deleted!');
+        return redirect()->route('dashboard.index')->with('delete', 'Article deleted!');
     }
 }

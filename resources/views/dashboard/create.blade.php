@@ -34,10 +34,11 @@
             <label for="cover_image" class="text-light">Upload Cover Image</label>
             <input type="file" class="form-control-file text-light" name="cover_image">
         </div>
-        <button type="submit" class="btn btn-primary">Post</button>
+        <div class="d-flex">
+            <button type="submit" class="btn btn-primary">Post</button>
+            <button type="reset" class="btn btn-secondary ml-2">Reset</button>
+            <a href="{{route('dashboard.index')}}" class="btn btn-secondary ml-2">Back To Dashboard</a>
+        </div>
     </form>
 </div>
-
-
-
 @endsection

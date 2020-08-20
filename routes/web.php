@@ -34,6 +34,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('create', 'DashboardController@create')->name('dashboard.create');
     Route::delete('articles/{id}', 'DashboardController@destroy')->name('dashboard.destroy');
     Route::post('store', 'DashboardController@store')->name('dashboard.store');
+    Route::get('article/{id}', 'DashboardController@show')->name('dashboard.show');
     Route::get('articles/{id}/edit', 'DashboardController@edit')->name('dashboard.edit');
     Route::patch('articles/{id}', 'DashboardController@update')->name('dashboard.update');
 });

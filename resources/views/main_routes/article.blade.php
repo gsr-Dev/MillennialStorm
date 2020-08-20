@@ -8,10 +8,7 @@
             <div class="card rounded-0 border-0 body-color">
                 <img src="/storage/cover_images/{{$query->cover_image}}" class="card-img-top rounded-0" alt="article picture">
                 <div class="body-color">
-
-                    <a href="/articles/{{$query->slug}}" class="body-links">
-                        <h3 class="card-title text-uppercase"><strong>{{$query->title}}</strong></h3>
-                    </a>
+                    <h3 class="card-title text-primary text-uppercase mt-4"><strong>{{$query->title}}</strong></h3>
                     <p><span class="text-light text-muted">{{$query->author}}</span></p>
                     <div class="text-light pb-4">
                         {!!$query->post!!}
