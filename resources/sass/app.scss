@@ -25,21 +25,14 @@
     color: #b27321;
 }
 
-.form-control::placeholder {
-    font-style: italic;
-}
-
-.form-control::-moz-placeholder {
-    font-style: italic;
-}
-
-.form-control::-webkit-input-placeholder {
-    font-style: italic;
+.btn {
+    border-radius: 0.2rem;
 }
 
 $theme-colors: (
     "primary": $sunshade,
-    "light": #c6c7c8
+    "light": #c6c7c8,
+    "primary-opacity": rgba(255, 166, 48, 0.3)
 );
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";

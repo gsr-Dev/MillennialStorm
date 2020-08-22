@@ -21,28 +21,8 @@
   color: #b27321;
 }
 
-.form-control::-moz-placeholder {
-  font-style: italic;
-}
-
-.form-control:-ms-input-placeholder {
-  font-style: italic;
-}
-
-.form-control::-ms-input-placeholder {
-  font-style: italic;
-}
-
-.form-control::placeholder {
-  font-style: italic;
-}
-
-.form-control::-moz-placeholder {
-  font-style: italic;
-}
-
-.form-control::-webkit-input-placeholder {
-  font-style: italic;
+.btn {
+  border-radius: 0.2rem;
 }
 
 /*!
@@ -74,6 +54,7 @@
   --danger: #e3342f;
   --light: #c6c7c8;
   --dark: #343a40;
+  --primary-opacity: rgba(255, 166, 48, 0.3);
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -2081,6 +2062,28 @@ pre code {
   background-color: #b9bbbe;
 }
 
+.table-primary-opacity,
+.table-primary-opacity > th,
+.table-primary-opacity > td {
+  background-color: rgba(255, 249, 242, 0.804);
+}
+
+.table-primary-opacity th,
+.table-primary-opacity td,
+.table-primary-opacity thead th,
+.table-primary-opacity tbody + tbody {
+  border-color: rgba(255, 241, 222, 0.636);
+}
+
+.table-hover .table-primary-opacity:hover {
+  background-color: rgba(255, 237, 217, 0.804);
+}
+
+.table-hover .table-primary-opacity:hover > td,
+.table-hover .table-primary-opacity:hover > th {
+  background-color: rgba(255, 237, 217, 0.804);
+}
+
 .table-active,
 .table-active > th,
 .table-active > td {
@@ -3077,6 +3080,47 @@ fieldset:disabled a.btn {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 
+.btn-primary-opacity {
+  color: #212529;
+  background-color: rgba(255, 166, 48, 0.3);
+  border-color: rgba(255, 166, 48, 0.3);
+}
+
+.btn-primary-opacity:hover {
+  color: #212529;
+  background-color: rgba(255, 150, 10, 0.3);
+  border-color: rgba(252, 144, 0, 0.3);
+}
+
+.btn-primary-opacity:focus,
+.btn-primary-opacity.focus {
+  color: #212529;
+  background-color: rgba(255, 150, 10, 0.3);
+  border-color: rgba(252, 144, 0, 0.3);
+  box-shadow: 0 0 0 0.2rem rgba(144, 102, 45, 0.5);
+}
+
+.btn-primary-opacity.disabled,
+.btn-primary-opacity:disabled {
+  color: #212529;
+  background-color: rgba(255, 166, 48, 0.3);
+  border-color: rgba(255, 166, 48, 0.3);
+}
+
+.btn-primary-opacity:not(:disabled):not(.disabled):active,
+.btn-primary-opacity:not(:disabled):not(.disabled).active,
+.show > .btn-primary-opacity.dropdown-toggle {
+  color: #212529;
+  background-color: rgba(252, 144, 0, 0.3);
+  border-color: rgba(239, 136, 0, 0.3);
+}
+
+.btn-primary-opacity:not(:disabled):not(.disabled):active:focus,
+.btn-primary-opacity:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary-opacity.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(144, 102, 45, 0.5);
+}
+
 .btn-outline-primary {
   color: #ffa630;
   border-color: #ffa630;
@@ -3363,6 +3407,42 @@ fieldset:disabled a.btn {
 .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-dark.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+
+.btn-outline-primary-opacity {
+  color: rgba(255, 166, 48, 0.3);
+  border-color: rgba(255, 166, 48, 0.3);
+}
+
+.btn-outline-primary-opacity:hover {
+  color: #212529;
+  background-color: rgba(255, 166, 48, 0.3);
+  border-color: rgba(255, 166, 48, 0.3);
+}
+
+.btn-outline-primary-opacity:focus,
+.btn-outline-primary-opacity.focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 166, 48, 0.5);
+}
+
+.btn-outline-primary-opacity.disabled,
+.btn-outline-primary-opacity:disabled {
+  color: rgba(255, 166, 48, 0.3);
+  background-color: transparent;
+}
+
+.btn-outline-primary-opacity:not(:disabled):not(.disabled):active,
+.btn-outline-primary-opacity:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary-opacity.dropdown-toggle {
+  color: #212529;
+  background-color: rgba(255, 166, 48, 0.3);
+  border-color: rgba(255, 166, 48, 0.3);
+}
+
+.btn-outline-primary-opacity:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary-opacity:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary-opacity.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 166, 48, 0.5);
 }
 
 .btn-link {
@@ -5550,6 +5630,23 @@ a.badge-dark.focus {
   box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
 }
 
+.badge-primary-opacity {
+  color: #212529;
+  background-color: rgba(255, 166, 48, 0.3);
+}
+
+a.badge-primary-opacity:hover,
+a.badge-primary-opacity:focus {
+  color: #212529;
+  background-color: rgba(252, 144, 0, 0.3);
+}
+
+a.badge-primary-opacity:focus,
+a.badge-primary-opacity.focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(255, 166, 48, 0.5);
+}
+
 .jumbotron {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
@@ -5707,6 +5804,20 @@ a.badge-dark.focus {
 
 .alert-dark .alert-link {
   color: #040505;
+}
+
+.alert-primary-opacity {
+  color: rgba(41, 27, 8, 0.636);
+  background-color: rgba(255, 251, 246, 0.86);
+  border-color: rgba(255, 249, 242, 0.804);
+}
+
+.alert-primary-opacity hr {
+  border-top-color: rgba(255, 237, 217, 0.804);
+}
+
+.alert-primary-opacity .alert-link {
+  color: rgba(0, 0, 0, 0.636);
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -6145,6 +6256,23 @@ a.badge-dark.focus {
   color: #fff;
   background-color: #1b1e21;
   border-color: #1b1e21;
+}
+
+.list-group-item-primary-opacity {
+  color: rgba(41, 27, 8, 0.636);
+  background-color: rgba(255, 249, 242, 0.804);
+}
+
+.list-group-item-primary-opacity.list-group-item-action:hover,
+.list-group-item-primary-opacity.list-group-item-action:focus {
+  color: rgba(41, 27, 8, 0.636);
+  background-color: rgba(255, 237, 217, 0.804);
+}
+
+.list-group-item-primary-opacity.list-group-item-action.active {
+  color: #fff;
+  background-color: rgba(41, 27, 8, 0.636);
+  border-color: rgba(41, 27, 8, 0.636);
 }
 
 .close {
@@ -7113,6 +7241,17 @@ button.bg-dark:focus {
   background-color: #1d2124 !important;
 }
 
+.bg-primary-opacity {
+  background-color: rgba(255, 166, 48, 0.3) !important;
+}
+
+a.bg-primary-opacity:hover,
+a.bg-primary-opacity:focus,
+button.bg-primary-opacity:hover,
+button.bg-primary-opacity:focus {
+  background-color: rgba(252, 144, 0, 0.3) !important;
+}
+
 .bg-white {
   background-color: #fff !important;
 }
@@ -7191,6 +7330,10 @@ button.bg-dark:focus {
 
 .border-dark {
   border-color: #343a40 !important;
+}
+
+.border-primary-opacity {
+  border-color: rgba(255, 166, 48, 0.3) !important;
 }
 
 .border-white {
@@ -10829,6 +10972,15 @@ a.text-light:focus {
 a.text-dark:hover,
 a.text-dark:focus {
   color: #121416 !important;
+}
+
+.text-primary-opacity {
+  color: rgba(255, 166, 48, 0.3) !important;
+}
+
+a.text-primary-opacity:hover,
+a.text-primary-opacity:focus {
+  color: rgba(227, 129, 0, 0.3) !important;
 }
 
 .text-body {

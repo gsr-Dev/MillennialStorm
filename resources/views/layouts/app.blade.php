@@ -28,13 +28,16 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <a href="/" class="mb-n3">
-                        <img src="/img/4XvRu9.svg" alt="logo" class="img-fluid">
+                        <img src="/img/4XvRu9.svg" alt="logo" class="img-fluid d-none d-lg-block">
                     </a>
                 </div>
 
             </div>
 
-            <nav class="navbar navbar-expand-lg navbar-dark body-color border-bottom border-primary">
+            <nav class="navbar navbar-expand-lg navbar-dark body-color border-bottom border-primary-opacity">
+                <a href="/" class="navbar-brand d-lg-none">
+                    <img src="/img/4XvRu9.svg" alt="logo" style="width: 200px; height: auto">
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_toggle" aria-controls="navbar_nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 @guest
                 <div class="collapse navbar-collapse justify-content-center" id="navbar_toggle">
@@ -90,8 +93,8 @@
                 </div>
                 <div class="col-lg-4">
                     <aside>
-                        <div class="container my-4">
-                            <div class="bg-dark py-4 d-flex flex-column">
+                        <div class="container my-4 p-0">
+                            <div class="bg-dark py-4 d-flex flex-column rounded">
                                 <h5 class="text-uppercase text-primary text-center">Follow Us</h5>
                                 <div class="d-flex justify-content-center mx-auto pt-2">
                                     <a href="#"><i class="fi-snsuxl-facebook text-primary px-2"></i></a>
@@ -101,7 +104,32 @@
                                 </div>
                                 <a href="#" class="mx-auto pt-4">Contact</a>
                             </div>
-                            <div class="bg-dark border-top border-primary py-4">
+                            <!-- Begin Mailchimp Signup Form -->
+                            <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+                            <style type="text/css">
+                                #mc_embed_signup {
+                                    background: #234789;
+                                    clear: left;
+                                    font: 14px Helvetica, Arial, sans-serif;
+                                }
+
+                                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	                            We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                            </style>
+                            <div id="mc_embed_signup">
+                                <form action="https://gmail.us17.list-manage.com/subscribe/post?u=c252042967ebb332a7bee3499&amp;id=57f5708cc0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                    <div id="mc_embed_signup_scroll">
+                                        <label for="mce-EMAIL">Subscribe</label>
+                                        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c252042967ebb332a7bee3499_57f5708cc0" tabindex="-1" value=""></div>
+                                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!--End mc_embed_signup-->
+                            <!-- <div class="bg-dark border-top border-primary py-4">
                                 <h5 class="text-uppercase text-primary text-center">Subscribe to the newsletter</h5>
                                 <form action="" class="px-4">
                                     <div class="form-group pt-2">
@@ -137,7 +165,7 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
                                 </form>
-                            </div>
+                            </div> -->
                         </div>
                     </aside>
                 </div>
