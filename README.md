@@ -1,3 +1,9 @@
-## This is my new blog
+## Millennial Storm 
 
-Readme to be continued...
+### Make sure you have an Apache Webserve (like xampp) installed on your local environment to view this application 
+
+To run the application: 
+
+1. Change your current directory to inside the /blog endpoint 
+2. Run the php artisan serve command in your terminal of choice 
+3. Navigate to localhost:8000 in your web browser. 
