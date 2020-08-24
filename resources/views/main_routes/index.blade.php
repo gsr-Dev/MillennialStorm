@@ -2,34 +2,37 @@
 
 @section('main')
 <div class="container">
-    <div class="row justify-content-center">
-        @foreach($article_props as $article_prop)
-        <div class="container p-4 border border-top-0 border-left-0 border-right-0 border-primary-opacity">
-            <div class="card border-0 body-color">
-                <img src="/storage/cover_images/{{$article_prop->cover_image}}" class="card-img-top img-fluid" alt="article picture">
-                <div class="body-color">
-                    <h6 class="text-muted text-uppercase pt-4">
-                        <a href="/category/{{$article_prop->tag_slug}}" class="body-links">{{$article_prop->tag}}</a>
-                    </h6>
-                    <a href="/article/{{$article_prop->slug}}" class="body-links">
-                        <h3 class="card-title text-uppercase"><strong>{{$article_prop->title}}</strong></h3>
-                    </a>
-                    <p><span class="text-light text-muted text-uppercase">{{$article_prop->created_at}}</span></p>
-                    <div class="text-light post-body-font pb-4">
-                        {{$article_prop->remark}}
-                    </div>
-                    <div class=" text-muted d-flex justify-content-center">
-                        <ul class="list-inline text-uppercase mb-0">
-                            <li class="list-inline-item px-2"><a href="#">Facebook</a></li>
-                            <li class="list-inline-item px-2 border-left border-right border-primary"><a href="#">Twitter</a></li>
-                            <li class="list-inline-item px-2"><a href="#">Email</a></li>
-                        </ul>
-                    </div>
+    <div class="row">
 
-                </div>
-            </div>
+        <div class="mt-4">
+            <a href="/article/{{$latest_article->slug}}" class="body-links">
+                <h1 class="article-title">{{$latest_article->title}}</h1>
+
+            </a>
+            <p><span class="article-author">{{$latest_article->author}}</span></p>
+            <a href="/article/{{$latest_article->slug}}">
+                <img src="/storage/cover_images/{{$latest_article->cover_image}}" alt="{{$latest_article->cover_image}}" class="img-fluid w-75 h-auto">
+            </a>
         </div>
-        @endforeach
+
     </div>
+
 </div>
+@endsection
+
+@section('articles')
+<div class="text-light mt-5 mb-3">
+    <h6>The Rest</h6>
+</div>
+@foreach($all_other_articles as $article)
+<div class="container d-flex justify-content-between mb-2 p-0 py-4 border-top border-primary-opacity">
+    <div>
+        <h4 class="article-title">{{$article->title}}</h4>
+        <p><span class="text-muted">{{$article->author}}</span></p>
+    </div>
+
+    <div class="text-light">{!!Str::limit($article->post, 300)!!}</div>
+    <img src="/storage/cover_images/{{$article->cover_image}}" alt="{{$article->cover_image}}" class="img-fluid w-25 h-auto">
+</div>
+@endforeach
 @endsection

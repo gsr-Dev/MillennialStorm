@@ -26,7 +26,7 @@
     @endif
 </div>
 <div class="container">
-    <h1 class="text-primary">Article Dashboard</h1>
+    <h1 class="text-primary font-weight-bold">Article Dashboard</h1>
     <a href="{{route('dashboard.create')}}" class="btn btn-primary my-2">Create Article</a>
 
     @foreach($articles->sortByDesc('id') as $article)

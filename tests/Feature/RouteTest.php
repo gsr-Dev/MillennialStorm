@@ -12,16 +12,9 @@ class RouteTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function testAboutPageRouteReturnsOk()
     {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
-    public function testRoutes()
-    {
-        $response = $this->get('/articles');
+        $response = $this->get('/about');
 
         $response->assertStatus(200);
     }

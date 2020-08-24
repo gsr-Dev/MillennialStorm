@@ -9,10 +9,10 @@
             <label for="title" class="text-light">Title</label>
             <input type="text" name="title" id="form-title" class="form-control">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="remark" class="text-light">Remark</label>
             <textarea name="remark" id="form-remark" class="form-control" cols="20" rows="4"></textarea>
-        </div>
+        </div> -->
 
         <div class="form-group pt-3">
             <label for="tags" class="text-light">Select Tag</label>

@@ -40,7 +40,7 @@ Route::prefix('dashboard')->group(function () {
 });
 
 Route::get('/about', function () {
-    return 'about';
+    return view('main_routes.about');
 });
 
 Route::get('/articles', 'CategoryController@index');

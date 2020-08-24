@@ -10,6 +10,8 @@
 
     <title>{{config('app.name', 'Millennial Storm')}}</title>
 
+    <link rel="shortcut icon" href="/img/favico.ico" type="image/x-icon">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script defer src="https://friconix.com/cdn/friconix.js"> </script>
@@ -23,6 +25,17 @@
 </head>
 
 <body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: 'your-app-id',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v8.0'
+            });
+        };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <div id="app" class="min-vh-100">
         <header role="banner" class="body-color">
             <div class="container">
@@ -97,10 +110,10 @@
                             <div class="bg-dark py-4 d-flex flex-column rounded">
                                 <h5 class="text-uppercase text-primary text-center">Follow Us</h5>
                                 <div class="d-flex justify-content-center mx-auto pt-2">
-                                    <a href="#"><i class="fi-snsuxl-facebook text-primary px-2"></i></a>
-                                    <a href="#"><i class="fi-xnsuxl-twitter text-primary px-2 border-left border-right border-primary"></i></a>
-                                    <a href="#"><i class="fi-xnsuxl-instagram text-primary px-2 border-right border-primary"></i></a>
-                                    <a href="#"><i class="fi-xnsuxl-discord text-primary px-2"></i></a>
+                                    <a href="https://www.facebook.com/MillennialStorm"><i class="fi-snsuxl-facebook text-primary px-2"></i></a>
+                                    <a href="https://twitter.com/StormMillennial"><i class="fi-xnsuxl-twitter text-primary px-2 border-left border-right border-primary"></i></a>
+                                    <a href="https://www.instagram.com/millennialstorm/"><i class="fi-xnsuxl-instagram text-primary px-2 border-right border-primary"></i></a>
+                                    <a href="https://discord.gg/Rqgda3h"><i class="fi-xnsuxl-discord text-primary px-2"></i></a>
                                 </div>
                                 <a href="#" class="mx-auto pt-4">Contact</a>
                             </div>
@@ -121,46 +134,14 @@
                                 </form>
                             </div>
 
-                            <!--End mc_embed_signup-->
-                            <!-- <div class="bg-dark border-top border-primary py-4">
-                                <h5 class="text-uppercase text-primary text-center">Subscribe to the newsletter</h5>
-                                <form action="" class="px-4">
-                                    <div class="form-group pt-2">
-                                        <input type="email" name="email" id="email" class="form-control 
-                                        shadow-none 
-                                        bg-dark 
-                                        border-top-0 
-                                        border-left-0 
-                                        border-right-0 
-                                        rounded-0 
-                                        border-primary" placeholder="Email...">
 
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="first-name" id="first-name" class="form-control
-                                        shadow-none
-                                        bg-dark
-                                        border-top-0
-                                        border-left-0
-                                        border-right-0
-                                        rounded-0
-                                        border-primary" placeholder="First Name...">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="last-name" id="last-name" class="form-control
-                                        shadow-none
-                                        bg-dark
-                                        border-top-0
-                                        border-left-0
-                                        border-right-0
-                                        rounded-0 
-                                        border-primary" placeholder="Last Name...">
-                                    </div>
-                                    <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
-                                </form>
-                            </div> -->
                         </div>
                     </aside>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    @yield('articles')
                 </div>
             </div>
         </div>
@@ -184,10 +165,11 @@
 
             </div>
             <div class="container py-4 text-muted">
-                &copy; 2020 Millennial Storm. All rights reserved. Hand-coded in Aotearoa / New Zealand by local talent.
+                &copy; 2020 Millennial Storm. All Rights Reserved. Hand-Coded in Aotearoa / New Zealand by Local Talent.
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>
