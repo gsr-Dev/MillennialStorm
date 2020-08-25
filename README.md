@@ -1,8 +1,12 @@
-## Millennial Storm
+## Millennial Storm 
+
+#### Check out a video of the site in action [here](https://streamable.com/rfplht)
 
 ### Make sure you have an Apache Webserve (like xampp) installed on your local environment to view this application
 
-### To install Laravel you can check out the installation guide [here](https://laravel.com/docs/7.x/installation)
+### To install Laravel you can check out the installation guide [here](https://laravel.com/docs/7.x/installation) 
+
+
 
 To run the application:
 
