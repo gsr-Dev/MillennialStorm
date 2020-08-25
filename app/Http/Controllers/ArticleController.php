@@ -14,8 +14,11 @@ class ArticleController extends Controller
     {
         $latest_article = Article::latest()->first();
         $tag = request('tag');
-
+        if ($latest_article === null) {
+            return redirect('/register');
+        }
         $all_other_articles = Article::where('id', '<', $latest_article->id)->simplePaginate(8);
+
         $all_other_articles_reversed = $all_other_articles->reverse();
         return view('main_routes.index', [
             'tag' => $tag,

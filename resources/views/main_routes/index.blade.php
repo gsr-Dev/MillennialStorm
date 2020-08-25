@@ -11,7 +11,7 @@
             </a>
             <p><span class="article-author">{{$latest_article->author}}</span></p>
             <a href="/article/{{$latest_article->slug}}">
-                <img src="/storage/cover_images/{{$latest_article->cover_image}}" alt="{{$latest_article->cover_image}}" class="img-fluid w-75 h-auto">
+                <img src="/storage/cover_images/{{$latest_article->cover_image}}" alt="{{$latest_article->cover_image}}" class="mt-1 img-fluid rounded">
             </a>
         </div>
 
@@ -25,14 +25,20 @@
     <h6>The Rest</h6>
 </div>
 @foreach($all_other_articles as $article)
-<div class="container d-flex justify-content-between mb-2 p-0 py-4 border-top border-primary-opacity">
-    <div>
-        <h4 class="article-title">{{$article->title}}</h4>
-        <p><span class="text-muted">{{$article->author}}</span></p>
+<div class="container mb-2 py-2 border-top border-primary-opacity">
+    <div class="row d-flex justify-content-between">
+        <div class="col-md-3 p-0">
+            <h4 class="article-title">{{$article->title}}</h4>
+            <p><span class="text-muted">{{$article->author}}</span></p>
+        </div>
+
+        <div class="text-light col-md-4">{!!Str::limit($article->post, 300)!!}</div>
+        <div class="col-md-4 p-0">
+            <img src="/storage/cover_images/{{$article->cover_image}}" alt="{{$article->cover_image}}" class="img-fluid rounded">
+
+        </div>
     </div>
 
-    <div class="text-light">{!!Str::limit($article->post, 300)!!}</div>
-    <img src="/storage/cover_images/{{$article->cover_image}}" alt="{{$article->cover_image}}" class="img-fluid w-25 h-auto">
 </div>
 @endforeach
 @endsection
