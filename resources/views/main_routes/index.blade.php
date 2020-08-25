@@ -28,7 +28,10 @@
 <div class="container mb-2 py-2 border-top border-primary-opacity">
     <div class="row d-flex justify-content-between">
         <div class="col-md-3 p-0">
-            <h4 class="article-title">{{$article->title}}</h4>
+            <a href="/article/{{$latest_article->slug}}" class="body-links">
+                <h4 class="article-title">{{$article->title}}</h4>
+            </a>
+
             <p><span class="text-muted">{{$article->author}}</span></p>
         </div>
 

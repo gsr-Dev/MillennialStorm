@@ -102,7 +102,6 @@ class DashboardController extends Controller
 
         $article->title = $request->title;
         $article->author = auth()->user()->name;
-        $article->remark = $request->remark;
         $article->slug = Str::slug($article->title, '-');
         $article->tag = Str::of(request('tag'))->lower();
         $article->tag_slug = Str::slug(Str::of($article->tag)->lower(), '-');
